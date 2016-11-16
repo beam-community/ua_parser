@@ -1,29 +1,64 @@
 defmodule UserAgentParser.Processor do
+  @moduledoc """
+  Prepare a raw YAML document for consumption by the parser by
+  converting charlists into strings and compiling our patterns.
+  """
 
-  alias UserAgentParser.Storage
-
-  def sanitize(user_agent) do
-    safe =
-      user_agent
-      |> String.trim
-
-    {:ok, safe}
+  @doc """
+  Process a document into Elixir keyword lists and compiled patterns
+  """
+  def process(document) do
+    document
+    |> extract
+    |> convert
+    |> compile
   end
 
-  def parse!(user_agent) do
-    {user_agents, os, devices} = Storage.list
-
+  defp atom_key(key) do
+    key
+    |> String.Chars.to_string
+    |> String.to_atom
   end
 
-  defp search(patterns, string) do
-    patterns
-    |> Enum.find(fn(regex) -> Regex.match?(regex, string) end)
-    |> match
+  defp compile(groups) do
+    groups
+    |> Enum.map(&compile_groups/1)
+    |> to_tuple # result: {user_agents, os, devices}
   end
 
-  defp match(nil, _string),
-    do: nil
+  defp compile_group(group) do
+    pattern =
+      group
+      |> Keyword.fetch!(:regex)
+      |> Regex.compile!
 
-  defp match(matches, string),
-    do: Regex.run(matches, string)
+    Keyword.put(group, :regex, pattern)
+  end
+
+  defp compile_groups(groups), do: Enum.map(groups, &compile_group/1)
+
+  defp convert([]), do: []
+  defp convert([head|tail]) do
+    result = Enum.map(head, &to_keyword/1)
+    [result|convert(tail)]
+  end
+
+  defp extract([document|_]) do
+    [{'user_agent_parsers', user_agents}, {'os_parsers', os}, {'device_parsers', devices}] = document
+
+    [user_agents, os, devices]
+  end
+
+  defp to_keyword([]), do: []
+  defp to_keyword([{key, value}|tails]) do
+    keyword = {atom_key(key), String.Chars.to_string(value)}
+    [keyword | to_keyword(tails)]
+  end
+
+  defp to_tuple(values, tuple \\ {})
+  defp to_tuple([], tuple), do: tuple
+  defp to_tuple([head|tail], tuple) do
+    tuple  = Tuple.append(tuple, head)
+    to_tuple(tail, tuple)
+  end
 end
