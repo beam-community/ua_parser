@@ -3,13 +3,11 @@ user_agent_parsers:
     family_replacement: 'CFNetwork'
 
 os_parsers:
-  - regex: 'HbbTV/\d+\.\d+\.\d+ \( ;(LG)E ;NetCast 4.0'
-    os_v1_replacement: '2013'
+  - regex: '((?:Mac ?|; )OS X)[\s/](?:(\d+)[_.](\d+)(?:[_.](\d+))?|Mach-O)'
+    os_replacement: 'Mac OS X'
 
 device_parsers:
-  - regex: '(wap[\-\ ]browser|maui|netfront|obigo|teleca|up\.browser|midp|Opera Mini)'
-    regex_flag: 'i'
-    device_replacement: 'Generic Feature Phone'
-    brand_replacement: 'Generic'
-    model_replacement: 'Feature Phone'
-
+  - regex: '(iPod)(?:;| touch;| Simulator;)'
+    device_replacement: '$1'
+    brand_replacement: 'Apple'
+    model_replacement: '$1'
