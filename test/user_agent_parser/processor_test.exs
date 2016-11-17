@@ -8,7 +8,7 @@ defmodule UserAgentParser.ProcessorTest do
 
     assert is_tuple(result)
     assert tuple_size(result) == 3
-    assert [[{:regex, pattern}, {:family_replacement, "CFNetwork"}]] = elem(result, 0)
+    assert [[{:regex, pattern}]] = elem(result, 0)
     assert Regex.regex?(pattern)
   end
 
