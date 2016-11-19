@@ -1,13 +1,17 @@
 defmodule UserAgentParser.Mixfile do
   use Mix.Project
 
+  @version "1.0.0"
+
   def project do
     [app: :user_agent_parser,
-     version: "0.0.1",
-     elixir: "~> 1.2",
+     description: "Parse user-agent strings with BrowserScope patterns",
+     version: @version,
+     elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     package: package(),
+     deps: deps()]
   end
 
   def application do
@@ -17,5 +21,12 @@ defmodule UserAgentParser.Mixfile do
 
   defp deps do
     [{:yamerl, "~> 0.4.0"}]
+  end
+
+  defp package do
+    [maintainers: ["Sean Callan"],
+     files: ["lib", "mix.exs", "README*", "LICENSE*", "patterns.yml"],
+     licenses: ["Apache 2.0"],
+     links: %{github: "https://github.com/doomspork/uap-parser"}]
   end
 end
