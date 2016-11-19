@@ -10,6 +10,6 @@ defmodule UserAgentParser.Parsers.DeviceTest do
     {_, _, [pattern|_]} = Storage.list
 
     result = Parser.parse({pattern, ["iPod;", "iPod"]})
-    assert %Device{family: "iPod"} = result
+    assert %Device{family: "Spider"} = result
   end
 end
