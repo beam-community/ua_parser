@@ -27,9 +27,9 @@ defmodule UAParser.Mixfile do
   end
 
   defp package do
-    [maintainers: ["Sean Callan"],
+    [maintainers: ["Sean Callan", "Bobby Grayson"],
      files: ["lib", "mix.exs", "README*", "LICENSE*", "patterns.yml"],
      licenses: ["Apache 2.0"],
-     links: %{github: "https://github.com/doomspork/uap-parser"}]
+     links: %{github: "https://github.com/doomspork/ua_parser"}]
   end
 end
