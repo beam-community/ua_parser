@@ -1,4 +1,6 @@
 defmodule UAParser.Parsers.Version do
+  @moduledoc false
+
   alias UAParser.{Version, Parsers.Base}
 
   import Base

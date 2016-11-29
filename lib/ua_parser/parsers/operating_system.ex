@@ -1,4 +1,6 @@
 defmodule UAParser.Parsers.OperatingSystem do
+  @moduledoc false
+
   alias UAParser.{OperatingSystem, Parsers.Base}
 
   import Base
