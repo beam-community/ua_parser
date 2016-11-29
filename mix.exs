@@ -23,6 +23,7 @@ defmodule UAParser.Mixfile do
     [
       {:yamerl, "~> 0.4.0"},
       {:credo, "~> 0.5", only: [:dev, :test]},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 
