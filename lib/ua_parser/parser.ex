@@ -3,7 +3,6 @@ defmodule UAParser.Parser do
   Handle parsing the user-agent string
   """
 
-  alias UAParser.UA, as: Agent
   alias UAParser.Parsers.{Device, OperatingSystem, UA}
 
   @doc """

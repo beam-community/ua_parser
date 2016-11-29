@@ -1,4 +1,6 @@
 defmodule UAParser.Parsers.UA do
+  @moduledoc false
+
   alias UAParser.{UA, Parsers.Base}
 
   import Base

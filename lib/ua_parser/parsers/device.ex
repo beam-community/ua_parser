@@ -1,4 +1,6 @@
 defmodule UAParser.Parsers.Device do
+  @moduledoc false
+
   alias UAParser.{Device, Parsers.Base}
 
   import Base
