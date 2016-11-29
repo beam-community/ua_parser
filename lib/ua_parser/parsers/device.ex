@@ -1,5 +1,5 @@
-defmodule UserAgentParser.Parsers.Device do
-  alias UserAgentParser.{Device, Parsers.Base}
+defmodule UAParser.Parsers.Device do
+  alias UAParser.{Device, Parsers.Base}
 
   import Base
   @behaviour Base

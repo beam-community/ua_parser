@@ -1,10 +1,10 @@
-defmodule UserAgentParser.Mixfile do
+defmodule UAParser.Mixfile do
   use Mix.Project
 
   @version "1.0.0"
 
   def project do
-    [app: :user_agent_parser,
+    [app: :ua_parser,
      description: "Parse user-agent strings with BrowserScope patterns",
      version: @version,
      elixir: "~> 1.3",
@@ -16,7 +16,7 @@ defmodule UserAgentParser.Mixfile do
 
   def application do
     [applications: [:logger, :yamerl],
-     mod: {UserAgentParser, []}]
+     mod: {UAParser, []}]
   end
 
   defp deps do
