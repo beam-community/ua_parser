@@ -1,5 +1,5 @@
-defmodule UserAgentParser.Parsers.Version do
-  alias UserAgentParser.{Version, Parsers.Base}
+defmodule UAParser.Parsers.Version do
+  alias UAParser.{Version, Parsers.Base}
 
   import Base
   @behaviour Base

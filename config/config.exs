@@ -1,4 +1,4 @@
 use Mix.Config
 
-config :user_agent_parser,
+config :ua_parser,
   patterns: "./patterns.yml"

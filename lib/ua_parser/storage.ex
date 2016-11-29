@@ -1,4 +1,4 @@
-defmodule UserAgentParser.Storage do
+defmodule UAParser.Storage do
   @moduledoc """
   Storage of User-Agent regular expressions
   """
@@ -6,9 +6,9 @@ defmodule UserAgentParser.Storage do
   use GenServer
 
   alias __MODULE__, as: Storage
-  alias UserAgentParser.Processor
+  alias UAParser.Processor
 
-  @pattern_file Application.get_env(:user_agent_parser, :patterns)
+  @pattern_file Application.get_env(:ua_parser, :patterns)
 
   @doc """
   Start our GenServer.
@@ -34,7 +34,6 @@ defmodule UserAgentParser.Storage do
 
   defp load_patterns(opts) do
     file = Keyword.get(opts, :pattern_file, @pattern_file)
-
     data =
       file
       |> :yamerl_constr.file
