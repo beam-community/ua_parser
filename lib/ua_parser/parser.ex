@@ -1,10 +1,10 @@
-defmodule UserAgentParser.Parser do
+defmodule UAParser.Parser do
   @moduledoc """
   Handle parsing the user-agent string
   """
 
-  alias UserAgentParser.UserAgent, as: Agent
-  alias UserAgentParser.Parsers.{Device, OperatingSystem, UserAgent}
+  alias UAParser.UA, as: Agent
+  alias UAParser.Parsers.{Device, OperatingSystem, UA}
 
   @doc """
   Parse a user-agent string given a set of patterns
@@ -45,7 +45,7 @@ defmodule UserAgentParser.Parser do
 
   defp parse_user_agent({user_agent, acc}, patterns) do
     patterns
-    |> find_and_parse(user_agent, UserAgent)
+    |> find_and_parse(user_agent, UA)
     |> Map.merge(acc)
   end
 

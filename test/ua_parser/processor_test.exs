@@ -1,7 +1,7 @@
-defmodule UserAgentParser.ProcessorTest do
+defmodule UAParser.ProcessorTest do
   use ExUnit.Case
 
-  alias UserAgentParser.Processor
+  alias UAParser.Processor
 
   test "converts yaml document into data structure" do
     result = Processor.process(test_data)

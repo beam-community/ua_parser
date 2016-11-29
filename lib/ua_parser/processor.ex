@@ -1,4 +1,4 @@
-defmodule UserAgentParser.Processor do
+defmodule UAParser.Processor do
   @moduledoc """
   Prepare a raw YAML document for consumption by the parser by
   converting charlists into strings and compiling our patterns.

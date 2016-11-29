@@ -1,5 +1,5 @@
-defmodule UserAgentParser.Parsers.OperatingSystem do
-  alias UserAgentParser.{OperatingSystem, Parsers.Base}
+defmodule UAParser.Parsers.OperatingSystem do
+  alias UAParser.{OperatingSystem, Parsers.Base}
 
   import Base
 

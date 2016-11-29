@@ -1,4 +1,4 @@
-defmodule UserAgentParser.Parsers.Base do
+defmodule UAParser.Parsers.Base do
   @moduledoc """
   Base and behaviour for all of our parsers
   """
@@ -15,10 +15,10 @@ defmodule UserAgentParser.Parsers.Base do
         family =
           group
           |> Keyword.get(unquote(family_key))
-          |> UserAgentParser.Parsers.Base.replace(1, match)
+          |> UAParser.Parsers.Base.replace(1, match)
 
         match   = Enum.slice(match, 1, 4)
-        version = UserAgentParser.Parsers.Version.parse({group, match}, unquote(replacements))
+        version = UAParser.Parsers.Version.parse({group, match}, unquote(replacements))
 
         struct(unquote(mod), %{family: family, version: version})
       end
