@@ -20,7 +20,10 @@ defmodule UAParser.Mixfile do
   end
 
   defp deps do
-    [{:yamerl, "~> 0.4.0"}]
+    [
+      {:yamerl, "~> 0.4.0"},
+      {:credo, "~> 0.5", only: [:dev, :test]},
+    ]
   end
 
   defp package do
