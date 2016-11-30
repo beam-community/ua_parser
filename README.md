@@ -59,10 +59,6 @@ ua =
   |> UAParser.parse()
 ```
 
-## Contributing
-
-Contributions are always welcome.  We ask that contributors familiarize themselves with the [CONTRIBUTING.md](CONTRIBUTING.md) guide.
-
 ## License
 
 UAParser source code is released under Apache 2.0 License.
