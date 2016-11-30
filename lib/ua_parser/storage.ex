@@ -8,8 +8,6 @@ defmodule UAParser.Storage do
   alias __MODULE__, as: Storage
   alias UAParser.Processor
 
-  @pattern_file Application.get_env(:ua_parser, :patterns)
-
   @doc """
   Start our GenServer.
   """
@@ -33,9 +31,9 @@ defmodule UAParser.Storage do
   def list, do: GenServer.call(Storage, :list)
 
   defp load_patterns(opts) do
-    file = Keyword.get(opts, :pattern_file, @pattern_file)
     data =
-      file
+      :ua_parser
+      |> Application.get_env(:patterns)
       |> :yamerl_constr.file
       |> Processor.process
 
