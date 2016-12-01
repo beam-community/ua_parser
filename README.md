@@ -66,6 +66,7 @@ To run it, simply cd into the `example` directory, and run the following:
 ```shell
 $ mix do deps.get, compile
 $ npm i && brunch build
+# change the configuration to match your own postgres username/password
 $ mix do ecto.create, ecto.migrate
 $ iex -S mix phoenix.server
 # visit localhost:4000/user_agent
