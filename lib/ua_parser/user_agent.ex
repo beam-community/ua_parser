@@ -1,6 +1,6 @@
 defmodule UAParser.UA do
   @moduledoc """
-  User Agent struct and helper methods
+  User Agent struct and helper methods.
   """
 
   @doc """

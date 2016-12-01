@@ -1,5 +1,8 @@
 defmodule UAParser.Parsers.Version do
-  @moduledoc false
+  @moduledoc """
+  A parser module representing the full version of a given
+  browser derived from the user agent.
+  """
 
   alias UAParser.{Version, Parsers.Base}
 

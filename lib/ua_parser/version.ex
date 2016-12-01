@@ -1,6 +1,6 @@
 defmodule UAParser.Version do
   @moduledoc """
-  Version struct and helper methods
+  A module representing user agent version struct and helper methods.
   """
 
   @doc """

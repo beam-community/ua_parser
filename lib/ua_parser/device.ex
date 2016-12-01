@@ -1,6 +1,6 @@
 defmodule UAParser.Device do
   @moduledoc """
-  Device struct and helper methods
+  Device struct and helper methods.
   """
 
   @doc """
