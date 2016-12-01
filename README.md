@@ -17,7 +17,7 @@ A simple, fast user-agent parsing library based on BrowserScope's UA database wi
 
     ```elixir
     def deps do
-      [{:ua_parser, "~> 1.0.0"}]
+      [{:ua_parser, "~> 1.1.1"}]
     end
     ```
 
