@@ -1,5 +1,7 @@
 defmodule UAParser.Parsers.UA do
-  @moduledoc false
+  @moduledoc """
+  A parser module representing the user agent from a request.
+  """
 
   alias UAParser.{UA, Parsers.Base}
 

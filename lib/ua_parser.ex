@@ -1,5 +1,7 @@
 defmodule UAParser do
-  @moduledoc false
+  @moduledoc """
+  A fast User Agent parser with a simple API.
+  """
 
   use Application
 

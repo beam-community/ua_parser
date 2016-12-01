@@ -1,6 +1,6 @@
 defmodule UAParser.OperatingSystem do
   @moduledoc """
-  Operating System struct
+  A module representing an operating System struct.
   """
 
   @doc """

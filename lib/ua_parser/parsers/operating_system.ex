@@ -1,5 +1,8 @@
 defmodule UAParser.Parsers.OperatingSystem do
-  @moduledoc false
+  @moduledoc """
+  A parser module representing the operating system derived
+  from a user agent.
+  """
 
   alias UAParser.{OperatingSystem, Parsers.Base}
 

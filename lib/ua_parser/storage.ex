@@ -1,6 +1,6 @@
 defmodule UAParser.Storage do
   @moduledoc """
-  Storage of User-Agent regular expressions
+  Storage of User-Agent regular expressions.
   """
 
   use GenServer

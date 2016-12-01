@@ -1,6 +1,6 @@
 defmodule UAParser.Parser do
   @moduledoc """
-  Handle parsing the user-agent string
+  Handle parsing the user-agent string.
   """
 
   alias UAParser.Parsers.{Device, OperatingSystem, UA}

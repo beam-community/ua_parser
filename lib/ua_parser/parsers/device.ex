@@ -1,5 +1,8 @@
 defmodule UAParser.Parsers.Device do
-  @moduledoc false
+  @moduledoc """
+  A parser module representing the device & its relevent information
+  of a user agent.
+  """
 
   alias UAParser.{Device, Parsers.Base}
 
