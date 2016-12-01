@@ -2,7 +2,7 @@
 
 [![Build Status][travis-img]][travis] [![Hex Version][hex-img]][hex] [![License][license-img]][license]
 
-A user-agent parsing library based on BrowserScope's UA database
+A simple, fast user-agent parsing library based on BrowserScope's UA database with a good default dictionary.
 
 [travis-img]: https://travis-ci.org/doomspork/ua_parser.png?branch=master
 [travis]: https://travis-ci.org/doomspork/ua_parser
@@ -60,8 +60,11 @@ ua =
 ```
 
 ## Example
+
 There is an example Phoenix application with a simple endpoint/route to retrieve the user agent header.
 To run it, simply cd into the `example` directory, and run the following:
+
+### Phoenix
 
 ```shell
 $ mix do deps.get, compile
@@ -71,6 +74,8 @@ $ mix do ecto.create, ecto.migrate
 $ iex -S mix phoenix.server
 # visit localhost:4000/user_agent
 ```
+
+### Plug
 
 It can also be used as a simple plug:
 
