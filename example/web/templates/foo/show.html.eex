@@ -1,0 +1,13 @@
+<h2>Show foo</h2>
+
+<ul>
+
+  <li>
+    <strong>Bar:</strong>
+    <%= @foo.bar %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: foo_path(@conn, :edit, @foo) %>
+<%= link "Back", to: foo_path(@conn, :index) %>

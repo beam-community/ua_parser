@@ -59,6 +59,68 @@ ua =
   |> UAParser.parse()
 ```
 
+## Example
+There is an example Phoenix application with a simple endpoint/route to retrieve the user agent header.
+To run it, simply cd into the `example` directory, and run the following:
+
+```shell
+$ mix do deps.get, compile
+$ npm i && brunch build
+# change the configuration to match your own postgres username/password
+$ mix do ecto.create, ecto.migrate
+$ iex -S mix phoenix.server
+# visit localhost:4000/user_agent
+```
+
+It can also be used as a simple plug:
+
+```shell
+mix new ua_plug
+cd ua_plug
+```
+
+And now set up `mix.exs`:
+
+```elixir
+# ...
+	defp deps do
+		[
+     {:cowboy, "~> 1.0.0"},
+     {:plug, "~> 1.0"},
+     {:ua_parser, git: "https://github.com/doomspork/ua_parser.git",
+                  branch: "master"},
+		]
+  end
+# ...
+```
+
+And we get our deps and compile:
+
+```shell
+$ mix do deps.get, compile
+```
+
+And now we can make our plug:
+
+```elixir
+defmodule UAPlug do
+  import Plug.Conn
+
+  def init(options), do: options
+
+  def call(conn, _opts) do
+    ua = 
+      conn
+         |> Plug.Conn.get_req_header("user-agent")
+         |> List.first()
+         |> UAParser.parse()
+    send_resp(200, ua)
+  end
+end
+```
+
+From here we can pipe requests through it in other applications or use it on its own as we please.
+
 ## License
 
 UAParser source code is released under Apache 2.0 License.
