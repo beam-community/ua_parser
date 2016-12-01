@@ -83,13 +83,13 @@ And now set up `mix.exs`:
 
 ```elixir
 # ...
-	defp deps do
-		[
+  defp deps do
+    [
      {:cowboy, "~> 1.0.0"},
      {:plug, "~> 1.0"},
      {:ua_parser, git: "https://github.com/doomspork/ua_parser.git",
                   branch: "master"},
-		]
+    ]
   end
 # ...
 ```
