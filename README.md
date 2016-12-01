@@ -114,7 +114,7 @@ defmodule UAPlug do
          |> Plug.Conn.get_req_header("user-agent")
          |> List.first()
          |> UAParser.parse()
-    send_resp(200, conn)
+    send_resp(200, ua)
   end
 end
 ```
