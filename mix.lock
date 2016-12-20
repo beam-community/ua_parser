@@ -2,4 +2,5 @@
   "credo": {:hex, :credo, "0.5.3", "0c405b36e7651245a8ed63c09e2d52c2e2b89b6d02b1570c4d611e0fcbecf4a2", [:mix], [{:bunt, "~> 0.1.6", [hex: :bunt, optional: false]}]},
   "earmark": {:hex, :earmark, "1.0.3", "89bdbaf2aca8bbb5c97d8b3b55c5dd0cff517ecc78d417e87f1d0982e514557b", [:mix], []},
   "ex_doc": {:hex, :ex_doc, "0.14.4", "a0a79a6896075814f4bc6802b74ccbed6549f47cc5ab34c71eaee2303170b8ef", [:mix], [{:earmark, "~> 1.0", [hex: :earmark, optional: false]}]},
-  "yamerl": {:hex, :yamerl, "0.4.0", "ae215b1242810a9bc07716b88062f1bfe06f6bc7cf68372091f630baa536df79", [:rebar3], []}}
+  "yamerl": {:hex, :yamerl, "0.4.0", "ae215b1242810a9bc07716b88062f1bfe06f6bc7cf68372091f630baa536df79", [:rebar3], []},
+  "yomel": {:hex, :yomel, "0.5.0", "c5a42d1818deda3f85ae14b1f01f6ece22b9ed8e8087012359fc04b59d85f621", [:make, :mix], []}}

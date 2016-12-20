@@ -26,7 +26,7 @@ defmodule UAParser.Parser do
   defp match(group, string) do
     match =
       group
-      |> Keyword.fetch!(:regex)
+      |> Map.fetch!(:regex)
       |> Regex.run(string)
 
     {group, match}
@@ -54,7 +54,7 @@ defmodule UAParser.Parser do
     groups
     |> Enum.find(fn(group) ->
       group
-      |> Keyword.fetch!(:regex)
+      |> Map.fetch!(:regex)
       |> Regex.match?(string)
     end)
     |> match(string)

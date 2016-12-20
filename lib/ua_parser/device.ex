@@ -14,7 +14,7 @@ defmodule UAParser.Device do
     iex> to_string(device)
     "Other"
   """
-  defstruct [:family]
+  defstruct [:family, :brand, :model]
 end
 
 defimpl String.Chars, for: UAParser.Device do
