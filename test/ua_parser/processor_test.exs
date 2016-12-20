@@ -8,13 +8,14 @@ defmodule UAParser.ProcessorTest do
 
     assert is_tuple(result)
     assert tuple_size(result) == 3
-    assert [[{:regex, pattern}]] = elem(result, 0)
+    assert [%{regex: pattern}] = elem(result, 0)
     assert Regex.regex?(pattern)
   end
 
   def test_data do
-    File.cwd!
+    {:ok, data} = File.cwd!
     |> Path.join("test/fixtures/patterns.yml")
-    |> :yamerl_constr.file
+    |> Yomel.decode_file
+    data
   end
 end
