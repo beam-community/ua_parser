@@ -14,7 +14,7 @@ defmodule UAParser.Parsers.Base do
       def parse({group, match}) do
         family =
           group
-          |> Keyword.get(unquote(family_key))
+          |> Map.get(unquote(family_key))
           |> UAParser.Parsers.Base.replace(1, match)
 
         match   = Enum.slice(match, 1, 4)

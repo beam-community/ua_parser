@@ -15,7 +15,7 @@ defmodule UAParser.Parsers.Version do
     |> Enum.with_index
     |> Enum.map(fn({key, index}) ->
       group
-      |> Keyword.get(key)
+      |> Map.get(key)
       |> replace(index + 1, match)
     end)
     |> version

@@ -18,15 +18,13 @@ defmodule UAParser.Mixfile do
 
   def application do
     [
-      applications: [:logger, :yamerl],
-      env: UAParser.Mixfile.env(),
-      mod: {UAParser, []},
+      applications: [:logger, :yomel]
     ]
   end
 
   defp deps do
     [
-      {:yamerl, "~> 0.4.0"},
+      {:yomel, "~> 0.5.0"},
       {:credo, "~> 0.5", only: [:dev, :test]},
       {:ex_doc, ">= 0.0.0", only: :dev},
     ]
@@ -41,20 +39,5 @@ defmodule UAParser.Mixfile do
     ]
   end
 
-  def env do
-    [
-      patterns: get_patterns_filename,
-    ]
-  end
 
-  @spec get_patterns_filename() :: String.t
-  def get_patterns_filename do
-    priv_path =
-      :ua_parser
-      |> :code.priv_dir()
-      |> IO.chardata_to_string()
-
-    default_path = priv_path <> "/patterns.yml"
-    Application.get_env(:ua_parser, :patterns, default_path)
-  end
 end

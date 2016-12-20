@@ -35,7 +35,7 @@ user_agent_parsers:
     family_replacement: 'MSIECrawler'
 
   # Downloader ...
-  - regex: '(Google-HTTP-Java-Client|Apache-HttpClient|http%20client|Python-urllib|HttpMonitor|TLSProber|WinHTTP|JNLP)(?:[ /](\d+)(?:\.(\d+)(?:\.(\d+))?)?)?'
+  - regex: '(Google-HTTP-Java-Client|Apache-HttpClient|http%20client|Python-urllib|HttpMonitor|TLSProber|WinHTTP|JNLP|okhttp)(?:[ /](\d+)(?:\.(\d+)(?:\.(\d+))?)?)?'
 
   # Bots
   - regex: '(1470\.net crawler|50\.nu|8bo Crawler Bot|Aboundex|Accoona-[A-z]+-Agent|AdsBot-Google(?:-[a-z]+)?|altavista|AppEngine-Google|archive.*?\.org_bot|archiver|Ask Jeeves|[Bb]ai[Dd]u[Ss]pider(?:-[A-Za-z]+)*|bingbot|BingPreview|blitzbot|BlogBridge|BoardReader(?: [A-Za-z]+)*|boitho.com-dc|BotSeer|\b\w*favicon\w*\b|\bYeti(?:-[a-z]+)?|Catchpoint bot|[Cc]harlotte|Checklinks|clumboot|Comodo HTTP\(S\) Crawler|Comodo-Webinspector-Crawler|ConveraCrawler|CRAWL-E|CrawlConvera|Daumoa(?:-feedfetcher)?|Feed Seeker Bot|findlinks|Flamingo_SearchEngine|FollowSite Bot|furlbot|Genieo|gigabot|GomezAgent|gonzo1|(?:[a-zA-Z]+-)?Googlebot(?:-[a-zA-Z]+)?|Google SketchUp|grub-client|gsa-crawler|heritrix|HiddenMarket|holmes|HooWWWer|htdig|ia_archiver|ICC-Crawler|Icarus6j|ichiro(?:/mobile)?|IconSurf|IlTrovatore(?:-Setaccio)?|InfuzApp|Innovazion Crawler|InternetArchive|IP2[a-z]+Bot|jbot\b|KaloogaBot|Kraken|Kurzor|larbin|LEIA|LesnikBot|Linguee Bot|LinkAider|LinkedInBot|Lite Bot|Llaut|lycos|Mail\.RU_Bot|masidani_bot|Mediapartners-Google|Microsoft .*? Bot|mogimogi|mozDex|MJ12bot|msnbot(?:-media *)?|msrbot|netresearch|Netvibes|NewsGator[^/]*|^NING|Nutch[^/]*|Nymesis|ObjectsSearch|Orbiter|OOZBOT|PagePeeker|PagesInventory|PaxleFramework|Peeplo Screenshot Bot|PlantyNet_WebRobot|Pompos|Read%20Later|Reaper|RedCarpet|Retreiver|Riddler|Rival IQ|scooter|Scrapy|Scrubby|searchsight|seekbot|semanticdiscovery|Simpy|SimplePie|SEOstats|SimpleRSS|SiteCon|Slackbot-LinkExpanding|Slack-ImgProxy|Slurp|snappy|Speedy Spider|Squrl Java|TheUsefulbot|ThumbShotsBot|Thumbshots\.ru|TwitterBot|URL2PNG|Vagabondo|VoilaBot|^vortex|Votay bot|^voyager|WASALive.Bot|Web-sniffer|WebThumb|WeSEE:[A-z]+|WhatWeb|WIRE|WordPress|Wotbox|www\.almaden\.ibm\.com|Xenu(?:.s)? Link Sleuth|Xerka [A-z]+Bot|yacy(?:bot)?|Yahoo[a-z]*Seeker|Yahoo! Slurp|Yandex\w+|YodaoBot(?:-[A-z]+)?|YottaaMonitor|Yowedo|^Zao|^Zao-Crawler|ZeBot_www\.ze\.bz|ZooShot|ZyBorg)(?:[ /]v?(\d+)(?:\.(\d+)(?:\.(\d+))?)?)?'
@@ -160,7 +160,7 @@ user_agent_parsers:
 
   # Lightning (for Thunderbird)
   # http://www.mozilla.org/projects/calendar/lightning/
-  - regex: '(Lightning)/(\d+)\.(\d+)\.?((?:[ab]?\d+[a-z]*)|(?:\d*))'
+  - regex: 'Gecko/\d+ (Lightning)/(\d+)\.(\d+)\.?((?:[ab]?\d+[a-z]*)|(?:\d*))'
 
   # Swiftfox
   - regex: '(Firefox)/(\d+)\.(\d+)\.(\d+(?:pre)?) \(Swiftfox\)'
@@ -276,12 +276,16 @@ user_agent_parsers:
   # AOL Browser (IE-based)
   - regex: '(AOL) (\d+)\.(\d+); AOLBuild (\d+)'
 
+  # MxBrowser is Maxthon
+  - regex: '(MxBrowser)/(\d+)\.(\d+)(?:\.(\d+))?'
+    family_replacement: 'Maxthon'
+
   #### END SPECIAL CASES TOP ####
 
   #### MAIN CASES - this catches > 50% of all browsers ####
 
   # Browser/major_version.minor_version.beta_version
-  - regex: '\b(MobileIron|Crosswalk|AdobeAIR|FireWeb|Jasmine|ANTGalio|Midori|Fresco|Lobo|PaleMoon|Maxthon|Lynx|OmniWeb|Dillo|Camino|Demeter|Fluid|Fennec|Epiphany|Shiira|Sunrise|Spotify|Flock|Netscape|Lunascape|WebPilot|NetFront|Netfront|Konqueror|SeaMonkey|Kazehakase|Vienna|Iceape|Iceweasel|IceWeasel|Iron|K-Meleon|Sleipnir|Galeon|GranParadiso|Opera Mini|iCab|NetNewsWire|ThunderBrowse|Iris|UP\.Browser|Bunjalloo|Google Earth|Raven for Mac|Openwave|MacOutlook)/(\d+)\.(\d+)\.(\d+)'
+  - regex: '\b(MobileIron|Crosswalk|FireWeb|Jasmine|ANTGalio|Midori|Fresco|Lobo|PaleMoon|Maxthon|Lynx|OmniWeb|Dillo|Camino|Demeter|Fluid|Fennec|Epiphany|Shiira|Sunrise|Spotify|Flock|Netscape|Lunascape|WebPilot|NetFront|Netfront|Konqueror|SeaMonkey|Kazehakase|Vienna|Iceape|Iceweasel|IceWeasel|Iron|K-Meleon|Sleipnir|Galeon|GranParadiso|Opera Mini|iCab|NetNewsWire|ThunderBrowse|Iris|UP\.Browser|Bunjalloo|Google Earth|Raven for Mac|Openwave|MacOutlook|Electron)/(\d+)\.(\d+)\.(\d+)'
 
   # Outlook 2007
   - regex: 'Microsoft Office Outlook 12\.\d+\.\d+|MSOffice 12'
@@ -336,18 +340,19 @@ user_agent_parsers:
   - regex: '(brave)/(\d+)\.(\d+)\.(\d+) Chrome'
     family_replacement: 'Brave'
 
-  # Chrome/Chromium/major_version.minor_version.beta_version
-  - regex: '(Chromium|Chrome)/(\d+)\.(\d+)\.(\d+)'
+  # Iron Browser ~since version 50
+  - regex: '(Chrome)/(\d+)\.(\d+)\.(\d+)[\d.]* Iron[^/]'
+    family_replacement: 'Iron'
 
   # Dolphin Browser
   # @ref: http://www.dolphin.com
   - regex: '\b(Dolphin)(?: |HDCN/|/INT\-)(\d+)\.(\d+)\.?(\d+)?'
 
   # Browser/major_version.minor_version
-  - regex: '(bingbot|Bolt|Jasmine|IceCat|Skyfire|Midori|Maxthon|Lynx|Arora|IBrowse|Dillo|Camino|Shiira|Fennec|Phoenix|Chrome|Flock|Netscape|Lunascape|Epiphany|WebPilot|Opera Mini|Opera|NetFront|Netfront|Konqueror|Googlebot|SeaMonkey|Kazehakase|Vienna|Iceape|Iceweasel|IceWeasel|Iron|K-Meleon|Sleipnir|Galeon|GranParadiso|iCab|iTunes|MacAppStore|NetNewsWire|Space Bison|Stainless|Orca|Dolfin|BOLT|Minimo|Tizen Browser|Polaris|Abrowser|Planetweb|ICE Browser|mDolphin|qutebrowser|Otter|QupZilla|MailBar|kmail2|YahooMobileMail|ExchangeWebServices|ExchangeServicesClient|Microsoft-CryptoAPI)/(\d+)\.(\d+)\.?(\d+)?'
+  - regex: '(bingbot|Bolt|AdobeAIR|Jasmine|IceCat|Skyfire|Midori|Maxthon|Lynx|Arora|IBrowse|Dillo|Camino|Shiira|Fennec|Phoenix|Flock|Netscape|Lunascape|Epiphany|WebPilot|Opera Mini|Opera|NetFront|Netfront|Konqueror|Googlebot|SeaMonkey|Kazehakase|Vienna|Iceape|Iceweasel|IceWeasel|Iron|K-Meleon|Sleipnir|Galeon|GranParadiso|iCab|iTunes|MacAppStore|NetNewsWire|Space Bison|Stainless|Orca|Dolfin|BOLT|Minimo|Tizen Browser|Polaris|Abrowser|Planetweb|ICE Browser|mDolphin|qutebrowser|Otter|QupZilla|MailBar|kmail2|YahooMobileMail|ExchangeWebServices|ExchangeServicesClient)/(\d+)\.(\d+)(?:\.(\d+))?'
 
   # Chrome/Chromium/major_version.minor_version
-  - regex: '(Chromium|Chrome)/(\d+)\.(\d+)'
+  - regex: '(Chromium|Chrome)/(\d+)\.(\d+)(?:\.(\d+))?'
 
   ##########
   # IE Mobile needs to happen before Android to catch cases such as:
@@ -360,6 +365,9 @@ user_agent_parsers:
   # IE Mobile
   - regex: '(IEMobile)[ /](\d+)\.(\d+)'
     family_replacement: 'IE Mobile'
+
+  # Baca Berita App News Reader
+  - regex: '(BacaBerita App)\/(\d+)\.(\d+)\.(\d+)'
 
   # Browser major_version.minor_version.beta_version (space instead of slash)
   - regex: '(iRider|Crazy Browser|SkipStone|iCab|Lunascape|Sleipnir|Maemo Browser) (\d+)\.(\d+)\.(\d+)'
@@ -553,10 +561,18 @@ user_agent_parsers:
   - regex: '(python-requests)/(\d+)\.(\d+)'
     family_replacement: 'Python Requests'
 
+  # headless user-agents
+  - regex: '\b(Windows-Update-Agent|Microsoft-CryptoAPI|SophosUpdateManager|SophosAgent|Debian APT-HTTP|Ubuntu APT-HTTP|libcurl-agent|libwww-perl|urlgrabber|curl|Wget|OpenBSD ftp|jupdate)(?:[ /](\d+)(?:\.(\d+)(?:\.(\d+))?)?)?'
+
   - regex: '(Java)[/ ]{0,1}\d+\.(\d+)\.(\d+)[_-]*([a-zA-Z0-9]+)*'
 
   # Roku Digital-Video-Players https://www.roku.com/
   - regex: '^(Roku)/DVP-(\d+)\.(\d+)'
+
+  # Kurio App News Reader https://kurio.co.id/
+  - regex: '(Kurio)\/(\d+)\.(\d+)\.(\d+)'
+    family_replacement: 'Kurio App'
+
 
 os_parsers:
   ##########
@@ -655,7 +671,7 @@ os_parsers:
   # UCWEB
   - regex: '^UCWEB.*; (Adr) (\d+)\.(\d+)(?:[.\-]([a-z0-9]+))?;'
     os_replacement: 'Android'
-  - regex: '^UCWEB.*; (iPad OS|iPh OS) (\d+)_(\d+)(?:_(\d+))?;'
+  - regex: '^UCWEB.*; (iPad|iPh|iPd) OS (\d+)_(\d+)(?:_(\d+))?;'
     os_replacement: 'iOS'
   - regex: '^UCWEB.*; (wds) (\d+)\.(\d+)(?:\.(\d+))?;'
     os_replacement: 'Windows Phone'
@@ -875,8 +891,9 @@ os_parsers:
     os_v1_replacement: '10'
     os_v2_replacement: '0'
   # iOS Apps
-  - regex: '\b(iOS[ /]|iPhone(?:/| v|[ _]OS[/,]|; | OS : |\d,\d/|\d,\d; )|iPad/)(\d{1,2})[_\.](\d{1,2})(?:[_\.](\d+))?'
+  - regex: '\b(iOS[ /]|iOS; |iPhone(?:/| v|[ _]OS[/,]|; | OS : |\d,\d/|\d,\d; )|iPad/)(\d{1,2})[_\.](\d{1,2})(?:[_\.](\d+))?'
     os_replacement: 'iOS'
+  - regex: '\((iOS);'
 
   ##########
   # Apple TV
@@ -4628,6 +4645,11 @@ device_parsers:
   ##########
   # Samsung
   ##########
+  # Samsung Smart-TV
+  - regex: '(SMART-TV); .* Tizen '
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
   # Samsung Symbian Devices
   - regex: 'SymbianOS/9\.\d.* Samsung[/\-]([A-Za-z0-9 \-]+)'
     device_replacement: 'Samsung $1'

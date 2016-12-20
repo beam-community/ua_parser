@@ -8,18 +8,20 @@ defmodule UAParser.Parsers.Device do
 
   import Base
   @behaviour Base
-
   def parse(nil), do: %Device{}
   def parse({group, match}) do
-    family = Keyword.get(group, :device_replacement)
-
-    family =
+    [family: :device_replacement, brand: :brand_replacement, model: :model_replacement ]
+    |> do_replacement({group,match}, %Device{})
+  end
+  def do_replacement([], _, device), do: device
+  def do_replacement([{key,replacement}| replacements],{group,match}, device) do
+    replace = Map.get(group, replacement)
+    replace =
       match
       |> Enum.with_index
-      |> Enum.reduce(family, fn({_, index}, acc) ->
+      |> Enum.reduce(replace, fn({_, index}, acc) ->
         replace(acc, index, match)
       end)
-
-    %Device{family: family}
+    do_replacement(replacements, {group,match}, Map.put(device,key,replace))
   end
 end
