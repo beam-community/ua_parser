@@ -1,16 +1,21 @@
 defmodule UAParser.Storage do
   @moduledoc """
-  Compile time loads regex data. Unfortunatley would require a restart for any pattern update
+  Load pattern data at compile time. Recompiling the application is necessary after updating the pattern file.
   """
 
   alias UAParser.Processor
-  {:ok,doc} = (:code.priv_dir(:ua_parser) ++ '/patterns.yml')
-      |> to_string
-      |> Yomel.decode_file
-  data = Processor.process(doc)
+
+  Application.start(:yamerl)
+
+  data =
+    :ua_parser
+    |> :code.priv_dir
+    |> Kernel.++('/patterns.yml')
+    |> to_string
+    |> :yamerl_constr.file([])
+    |> Processor.process
+
   @data data
 
   def list, do: @data
-
-
 end

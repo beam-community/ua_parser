@@ -1,9 +1,7 @@
 defmodule UAParser do
   @moduledoc """
-  A not so fast User Agent parser with a widely used API.
+  A fast User Agent parser with a widely used API.
   """
-
-  use Application
 
   alias UAParser.{Parser, Storage}
 
@@ -21,7 +19,7 @@ defmodule UAParser do
     iex> to_string(ua.device)
     "Other"
   """
-  def parse(ua), do: Parser.parse(pattern, ua)
+  def parse(ua), do: Parser.parse(pattern(), ua)
 
   defp pattern, do: Storage.list
 end

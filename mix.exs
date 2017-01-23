@@ -1,7 +1,7 @@
 defmodule UAParser.Mixfile do
   use Mix.Project
 
-  @version "1.1.1"
+  @version "1.2.0"
 
   def project do
     [
@@ -18,13 +18,15 @@ defmodule UAParser.Mixfile do
 
   def application do
     [
-      applications: [:logger, :yomel]
+      applications: [:logger, :yamerl]
     ]
   end
 
   defp deps do
     [
-      {:yomel, "~> 0.5.0"},
+      {:yamerl, "~> 0.4.0"},
+
+      # Development & Test dependencies
       {:credo, "~> 0.5", only: [:dev, :test]},
       {:ex_doc, ">= 0.0.0", only: :dev},
     ]
