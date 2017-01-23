@@ -1,46 +1,21 @@
 defmodule UAParser.Storage do
   @moduledoc """
-  Storage of User-Agent regular expressions.
+  Load pattern data at compile time. Recompiling the application is necessary after updating the pattern file.
   """
 
-  use GenServer
-
-  alias __MODULE__, as: Storage
   alias UAParser.Processor
 
-  @doc """
-  Start our GenServer.
-  """
-  def start_link(opts \\ []) do
-    GenServer.start_link(Storage, opts, name: Storage)
-  end
+  Application.start(:yamerl)
 
-  @doc """
-  Initialize storage
-  """
-  def init(opts), do: load_patterns(opts)
+  data =
+    :ua_parser
+    |> :code.priv_dir
+    |> Kernel.++('/patterns.yml')
+    |> to_string
+    |> :yamerl_constr.file([])
+    |> Processor.process
 
-  @doc """
-  Look for a matching User-Agent
-  """
-  def handle_call(:list, _from, opts),
-    do: {:reply, opts[:data], opts}
+  @data data
 
-  @doc """
-  """
-  def list, do: GenServer.call(Storage, :list)
-
-  defp load_patterns(opts) do
-    data =
-      :ua_parser
-      |> Application.get_env(:patterns)
-      |> :yamerl_constr.file
-      |> Processor.process
-
-    opts =
-      opts
-      |> Keyword.put(:data, data)
-
-    {:ok, opts}
-  end
+  def list, do: @data
 end

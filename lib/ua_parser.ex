@@ -1,23 +1,9 @@
 defmodule UAParser do
   @moduledoc """
-  A fast User Agent parser with a simple API.
+  A fast User Agent parser with a widely used API.
   """
 
-  use Application
-
   alias UAParser.{Parser, Storage}
-
-  @doc false
-  def start(_type, _args) do
-    import Supervisor.Spec, warn: false
-
-    children = [
-      worker(Storage, []),
-    ]
-
-    opts = [strategy: :one_for_one, name: UAParser.Supervisor]
-    Supervisor.start_link(children, opts)
-  end
 
   @doc """
   Parse a user-agent string into structs
@@ -33,7 +19,7 @@ defmodule UAParser do
     iex> to_string(ua.device)
     "Other"
   """
-  def parse(ua), do: Parser.parse(pattern, ua)
+  def parse(ua), do: Parser.parse(pattern(), ua)
 
   defp pattern, do: Storage.list
 end

@@ -4,21 +4,24 @@ defmodule UAParser.Parsers.Version do
   browser derived from the user agent.
   """
 
-  alias UAParser.{Version, Parsers.Base}
+  @behaviour UAParser.Parsers.Base
 
-  import Base
-  @behaviour Base
+  import UAParser.Parsers.Base
+
+  alias UAParser.Version
 
   def parse(nil), do: %Version{}
-  def parse({group, match}, keys \\ []) do
+  def parse(grouping, keys \\ []) do
     keys
     |> Enum.with_index
-    |> Enum.map(fn({key, index}) ->
-      group
-      |> Keyword.get(key)
-      |> replace(index + 1, match)
-    end)
+    |> Enum.map(&parse_version(grouping, &1))
     |> version
+  end
+
+  defp parse_version({group, match}, {key, index}) do
+    group
+    |> Keyword.get(key)
+    |> replace(index + 1, match)
   end
 
   defp version([major, minor, patch, patch_minor]),

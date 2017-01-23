@@ -3,10 +3,9 @@ defmodule UAParser.Parsers.OperatingSystem do
   A parser module representing the operating system derived
   from a user agent.
   """
+  import UAParser.Parsers.Base
 
-  alias UAParser.{OperatingSystem, Parsers.Base}
-
-  import Base
+  alias UAParser.OperatingSystem
 
   replacement_parser struct: OperatingSystem,
                        keys: [:os_replacement,
