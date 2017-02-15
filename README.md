@@ -17,7 +17,7 @@ A simple, fast user-agent parsing library based on BrowserScope's UA database wi
 
     ```elixir
     def deps do
-      [{:ua_parser, "~> 1.1.1"}]
+      [{:ua_parser, "~> 1.2"}]
     end
     ```
 
@@ -114,7 +114,7 @@ defmodule UAPlug do
   def init(options), do: options
 
   def call(conn, _opts) do
-    ua = 
+    ua =
       conn
          |> Plug.Conn.get_req_header("user-agent")
          |> List.first()
