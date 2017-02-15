@@ -24,6 +24,7 @@ defmodule UAParser.Parsers.Version do
     |> replace(index + 1, match)
   end
 
+  defp version([major]), do: %Version{major: major}
   defp version([major, minor, patch, patch_minor]),
     do: %Version{major: major, minor: minor, patch: patch, patch_minor: patch_minor}
 end
