@@ -9,8 +9,8 @@ defmodule UAParser.Parsers.UA do
 
   replacement_parser struct: UA,
                        keys: [:family_replacement,
-                              :os_replacement,
-                              :os_replacement,
-                              :os_replacement,
-                              :os_replacement]
+                              :v1_replacement,
+                              :v2_replacement,
+                              :v3_replacement,
+                              :v4_replacement]
 end

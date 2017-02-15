@@ -4,7 +4,7 @@ defmodule UAParser.ProcessorTest do
   alias UAParser.Processor
 
   test "converts yaml document into data structure" do
-    result = Processor.process(test_data)
+    result = Processor.process(test_data())
 
     assert is_tuple(result)
     assert tuple_size(result) == 3

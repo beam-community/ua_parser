@@ -11,9 +11,9 @@ defmodule UAParser.Parser do
   def parse({ua_patterns, os_patterns, device_patterns}, user_agent) do
     user_agent
     |> sanitize
-    |> parse_os(os_patterns)
-    |> parse_device(device_patterns)
     |> parse_user_agent(ua_patterns)
+    |> parse_device(device_patterns)
+    |> parse_os(os_patterns)
   end
 
   defp find_and_parse(patterns, user_agent, module) do
@@ -37,15 +37,15 @@ defmodule UAParser.Parser do
     {user_agent, Map.put(acc, :device, device)}
   end
 
-  defp parse_os(user_agent, patterns) do
+  defp parse_os({user_agent, acc}, patterns) do
     os = find_and_parse(patterns, user_agent, OperatingSystem)
-    {user_agent, %{os: os}}
+    Map.put(acc, :os, os)
   end
 
-  defp parse_user_agent({user_agent, acc}, patterns) do
-    patterns
-    |> find_and_parse(user_agent, UA)
-    |> Map.merge(acc)
+  defp parse_user_agent(user_agent, patterns) do
+    ua = find_and_parse(patterns, user_agent, UA)
+
+    {user_agent, ua}
   end
 
   defp sanitize(user_agent), do: String.trim(user_agent)

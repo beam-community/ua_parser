@@ -28,6 +28,10 @@ defmodule UAParser.Parsers.Base do
   def replace(nil, position, match), do: Enum.at(match, position)
   def replace(string, position, match) do
     val = Enum.at(match, position)
-    String.replace(string, "$#{position}", val)
+    if val do
+      String.replace(string, "$#{position}", val)
+    else
+      string
+    end
   end
 end
