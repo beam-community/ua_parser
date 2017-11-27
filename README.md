@@ -1,34 +1,23 @@
 # UAParser
 
-[![Build Status][travis-img]][travis] [![Hex Version][hex-img]][hex] [![License][license-img]][license]
+[![Build Status][travis-img]][travis] [![License][license-img]][license]
 
 A simple, fast user-agent parsing library based on BrowserScope's UA database with a good default dictionary.
 
 [travis-img]: https://travis-ci.org/doomspork/ua_parser.png?branch=master
 [travis]: https://travis-ci.org/doomspork/ua_parser
-[hex-img]: https://img.shields.io/hexpm/v/ua_parser.svg
-[hex]: https://hex.pm/packages/ua_parser
 [license-img]: https://img.shields.io/badge/license-Apache%202.0-blue.svg
 [license]: http://opensource.org/licenses/Apache-2.0
 
 ## Installation
 
-1. Add `ua_parser` to your `mix.exs` dependencies:
+Add `ua_parser` to your `mix.exs` dependencies:
 
     ```elixir
     def deps do
-      [{:ua_parser, "~> 1.2"}]
+      [{:ua_parser, "~> 1.3"}]
     end
     ```
-
-2. Add `:ua_parser` to your application dependencies:
-
-    ```elixir
-    def application do
-      [applications: [:ua_parser]]
-    end
-    ```
-
 ## Usage
 
 ```elixir
