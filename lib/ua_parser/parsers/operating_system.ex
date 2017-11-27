@@ -7,10 +7,11 @@ defmodule UAParser.Parsers.OperatingSystem do
 
   alias UAParser.OperatingSystem
 
-  replacement_parser struct: OperatingSystem,
-                       keys: [:os_replacement,
-                              :os_v1_replacement,
-                              :os_v2_replacement,
-                              :os_v3_replacement,
-                              :os_v4_replacement]
+  replacement_parser(struct: OperatingSystem, keys: [
+    :os_replacement,
+    :os_v1_replacement,
+    :os_v2_replacement,
+    :os_v3_replacement,
+    :os_v4_replacement
+  ])
 end

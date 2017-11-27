@@ -11,9 +11,10 @@ defmodule UAParser.Parsers.Version do
   alias UAParser.Version
 
   def parse(nil), do: %Version{}
+
   def parse(grouping, keys \\ []) do
     keys
-    |> Enum.with_index
+    |> Enum.with_index()
     |> Enum.map(&parse_version(grouping, &1))
     |> version
   end
@@ -25,6 +26,7 @@ defmodule UAParser.Parsers.Version do
   end
 
   defp version([major]), do: %Version{major: major}
+
   defp version([major, minor, patch, patch_minor]),
     do: %Version{major: major, minor: minor, patch: patch, patch_minor: patch_minor}
 end

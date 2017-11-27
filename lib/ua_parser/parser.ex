@@ -23,6 +23,7 @@ defmodule UAParser.Parser do
   end
 
   defp match(nil, _string), do: nil
+
   defp match(group, string) do
     match =
       group
@@ -52,11 +53,11 @@ defmodule UAParser.Parser do
 
   defp search(groups, string) do
     groups
-    |> Enum.find(fn(group) ->
-      group
-      |> Keyword.fetch!(:regex)
-      |> Regex.match?(string)
-    end)
+    |> Enum.find(fn group ->
+         group
+         |> Keyword.fetch!(:regex)
+         |> Regex.match?(string)
+       end)
     |> match(string)
   end
 end

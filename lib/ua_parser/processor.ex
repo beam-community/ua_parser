@@ -16,21 +16,22 @@ defmodule UAParser.Processor do
 
   defp atom_key(key) do
     key
-    |> String.Chars.to_string
-    |> String.to_atom
+    |> String.Chars.to_string()
+    |> String.to_atom()
   end
 
   defp compile(groups) do
+    # result: {user_agents, os, devices}
     groups
     |> Enum.map(&compile_groups/1)
-    |> to_tuple # result: {user_agents, os, devices}
+    |> to_tuple
   end
 
   defp compile_group(group) do
     pattern =
       group
       |> Keyword.fetch!(:regex)
-      |> Regex.compile!
+      |> Regex.compile!()
 
     Keyword.put(group, :regex, pattern)
   end
@@ -38,27 +39,31 @@ defmodule UAParser.Processor do
   defp compile_groups(groups), do: Enum.map(groups, &compile_group/1)
 
   defp convert([]), do: []
-  defp convert([head|tail]) do
+
+  defp convert([head | tail]) do
     result = Enum.map(head, &to_keyword/1)
-    [result|convert(tail)]
+    [result | convert(tail)]
   end
 
-  defp extract([document|_]) do
-    [{'user_agent_parsers', user_agents}, {'os_parsers', os}, {'device_parsers', devices}] = document
+  defp extract([document | _]) do
+    [{'user_agent_parsers', user_agents}, {'os_parsers', os}, {'device_parsers', devices}] =
+      document
 
     [user_agents, os, devices]
   end
 
   defp to_keyword([]), do: []
-  defp to_keyword([{key, value}|tails]) do
+
+  defp to_keyword([{key, value} | tails]) do
     keyword = {atom_key(key), String.Chars.to_string(value)}
     [keyword | to_keyword(tails)]
   end
 
   defp to_tuple(values, tuple \\ {})
   defp to_tuple([], tuple), do: tuple
-  defp to_tuple([head|tail], tuple) do
-    tuple  = Tuple.append(tuple, head)
+
+  defp to_tuple([head | tail], tuple) do
+    tuple = Tuple.append(tuple, head)
     to_tuple(tail, tuple)
   end
 end

@@ -21,5 +21,5 @@ defmodule UAParser do
   """
   def parse(ua), do: Parser.parse(pattern(), ua)
 
-  defp pattern, do: Storage.list
+  defp pattern, do: Storage.list()
 end
