@@ -1,14 +1,14 @@
 defmodule UAParser.Mixfile do
   use Mix.Project
 
-  @version "1.2.1"
+  @version "1.3.0"
 
   def project do
     [
       app: :ua_parser,
       description: "Parse user-agent strings with BrowserScope patterns",
       version: @version,
-      elixir: "~> 1.3",
+      elixir: "~> 1.4",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       package: package(),
@@ -17,17 +17,15 @@ defmodule UAParser.Mixfile do
   end
 
   def application do
-    [
-      applications: [:logger, :yamerl]
-    ]
+    [extra_aplications: [:logger, :yamerl]]
   end
 
   defp deps do
     [
-      {:yamerl, "~> 0.4.0"},
+      {:yamerl, "~> 0.5"},
 
       # Development & Test dependencies
-      {:credo, "~> 0.5", only: [:dev, :test]},
+      {:credo, "~> 0.8", only: [:dev, :test]},
       {:ex_doc, ">= 0.0.0", only: :dev},
     ]
   end
@@ -40,6 +38,4 @@ defmodule UAParser.Mixfile do
       links: %{github: "https://github.com/doomspork/ua_parser"}
     ]
   end
-
-
 end
