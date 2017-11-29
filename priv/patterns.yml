@@ -572,6 +572,8 @@ user_agent_parsers:
   # @note: iOS / OSX Applications
   - regex: '(iPod|iPhone|iPad).+Version/(\d+)\.(\d+)(?:\.(\d+))?.*[ +]Safari'
     family_replacement: 'Mobile Safari'
+  - regex: '(iPod|iPod touch|iPhone|iPad);.*CPU.*OS[ +](\d+)_(\d+)(?:_(\d+))?.* AppleNews\/\d+\.\d+\.\d+?'
+    family_replacement: 'Mobile Safari UI/WKWebView'
   - regex: '(iPod|iPhone|iPad).+Version/(\d+)\.(\d+)(?:\.(\d+))?'
     family_replacement: 'Mobile Safari UI/WKWebView'
   - regex: '(iPod|iPod touch|iPhone|iPad);.*CPU.*OS[ +](\d+)_(\d+)(?:_(\d+))?.*Mobile.*[ +]Safari'
@@ -673,8 +675,21 @@ user_agent_parsers:
   - regex: '(Phantom)/V(\d+)\.(\d+)'
     family_replacement: 'Phantom Browser'
 
-  - regex: 'Trident(.*)rv.(\d+)\.(\d+)'
+  - regex: '(Trident)/(7)\.(0)'
     family_replacement: 'IE'
+    v1_replacement: '11'
+
+  - regex: '(Trident)/(6)\.(0)'
+    family_replacement: 'IE'
+    v1_replacement: '10'
+
+  - regex: '(Trident)/(5)\.(0)'
+    family_replacement: 'IE'
+    v1_replacement: '9'
+
+  - regex: '(Trident)/(4)\.(0)'
+    family_replacement: 'IE'
+    v1_replacement: '8'
 
   # Espial
   - regex: '(Espial)/(\d+)(?:\.(\d+))?(?:\.(\d+))?'
