@@ -13,11 +13,12 @@ A simple, fast user-agent parsing library based on BrowserScope's UA database wi
 
 Add `ua_parser` to your `mix.exs` dependencies:
 
-    ```elixir
-    def deps do
-      [{:ua_parser, "~> 1.3"}]
-    end
-    ```
+```elixir
+def deps do
+  [{:ua_parser, "~> 1.4"}]
+end
+```
+
 ## Usage
 
 ```elixir
