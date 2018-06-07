@@ -18,7 +18,7 @@ defmodule UAParser.Parsers.Base do
           |> Keyword.get(unquote(family_key))
           |> UAParser.Parsers.Base.replace(1, match)
 
-        match = Enum.slice(match, 1, 4)
+        match = Enum.slice(match, 1, 5)
         version = UAParser.Parsers.Version.parse({group, match}, unquote(replacements))
 
         struct(unquote(mod), %{family: family, version: version})
