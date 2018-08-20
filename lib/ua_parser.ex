@@ -19,7 +19,9 @@ defmodule UAParser do
     iex> to_string(ua.device)
     "Other"
   """
-  def parse(ua), do: Parser.parse(pattern(), ua)
+  def parse(ua), do: parse(ua, default_pattern)
+  def parse(ua, pattern), do: Parser.parse(pattern, ua)
 
-  defp pattern, do: Storage.list()
+
+  defp default_pattern, do: Storage.list()
 end
