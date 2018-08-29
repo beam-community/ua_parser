@@ -1,7 +1,7 @@
 defmodule UAParser.Mixfile do
   use Mix.Project
 
-  @version "1.4.0"
+  @version "1.5.0"
 
   def project do
     [
@@ -22,17 +22,17 @@ defmodule UAParser.Mixfile do
 
   defp deps do
     [
-      {:yamerl, "~> 0.5"},
+      {:yamerl, "~> 0.7"},
 
       # Development & Test dependencies
-      {:credo, "~> 0.8", only: [:dev, :test]},
+      {:credo, "~> 0.10", only: [:dev, :test]},
       {:ex_doc, ">= 0.0.0", only: :dev},
     ]
   end
 
   defp package do
     [
-      maintainers: ["Sean Callan", "Bobby Grayson"],
+      maintainers: ["Sean Callan"],
       files: ["lib", "mix.exs", "README*", "LICENSE*", "priv"],
       licenses: ["Apache 2.0"],
       links: %{github: "https://github.com/doomspork/ua_parser"}
