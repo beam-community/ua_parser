@@ -4,15 +4,15 @@ defmodule UAParser.Device do
   """
 
   @doc """
-  # Examples
+  ## Examples
 
-    iex> device = %UAParser.Device{family: "iPhone"}
-    iex> to_string(device)
-    "iPhone"
+      iex> device = %UAParser.Device{family: "iPhone"}
+      iex> to_string(device)
+      "iPhone"
 
-    iex> device = %UAParser.Device{}
-    iex> to_string(device)
-    "Other"
+      iex> device = %UAParser.Device{}
+      iex> to_string(device)
+      "Other"
   """
   defstruct [:brand, :family, :model]
 end

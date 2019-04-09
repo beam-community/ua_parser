@@ -4,16 +4,16 @@ defmodule UAParser.OperatingSystem do
   """
 
   @doc """
-  # Examples
+  ## Examples
 
-    iex> version = %UAParser.Version{major: "1", minor: "2"}
-    iex> os = %UAParser.OperatingSystem{family: "macOS", version: version}
-    iex> to_string(os)
-    "macOS 1.2"
+      iex> version = %UAParser.Version{major: "1", minor: "2"}
+      iex> os = %UAParser.OperatingSystem{family: "macOS", version: version}
+      iex> to_string(os)
+      "macOS 1.2"
 
-    iex> os = %UAParser.OperatingSystem{family: "macOS"}
-    iex> to_string(os)
-    "macOS"
+      iex> os = %UAParser.OperatingSystem{family: "macOS"}
+      iex> to_string(os)
+      "macOS"
   """
   defstruct [:family, :version]
 end
