@@ -6,20 +6,20 @@ defmodule UAParser.UA do
   @doc """
   Display the UA as a string
 
-  # Examples
+  ## Examples
 
-    iex> version = %UAParser.Version{major: "1", minor: "2", patch: "3", patch_minor: "4"}
-    iex> agent = %UAParser.UA{family: "Family", version: version}
-    iex> to_string(agent)
-    "Family 1.2.3.4"
+      iex> version = %UAParser.Version{major: "1", minor: "2", patch: "3", patch_minor: "4"}
+      iex> agent = %UAParser.UA{family: "Family", version: version}
+      iex> to_string(agent)
+      "Family 1.2.3.4"
 
-    iex> agent = %UAParser.UA{family: "Family"}
-    iex> to_string(agent)
-    "Family"
+      iex> agent = %UAParser.UA{family: "Family"}
+      iex> to_string(agent)
+      "Family"
 
-    iex> agent = %UAParser.UA{}
-    iex> to_string(agent)
-    "Other"
+      iex> agent = %UAParser.UA{}
+      iex> to_string(agent)
+      "Other"
   """
 
   defstruct [:device, :family, :os, :version]

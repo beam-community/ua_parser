@@ -4,23 +4,23 @@ defmodule UAParser.Version do
   """
 
   @doc """
-  # Examples
+  ## Examples
 
-    iex> version = %UAParser.Version{major: "1", minor: "2", patch: "3", patch_minor: "4"}
-    iex> to_string(version)
-    "1.2.3.4"
+      iex> version = %UAParser.Version{major: "1", minor: "2", patch: "3", patch_minor: "4"}
+      iex> to_string(version)
+      "1.2.3.4"
 
-    iex> version = %UAParser.Version{major: "1", minor: "2", patch: "3"}
-    iex> to_string(version)
-    "1.2.3"
+      iex> version = %UAParser.Version{major: "1", minor: "2", patch: "3"}
+      iex> to_string(version)
+      "1.2.3"
 
-    iex> version = %UAParser.Version{major: "1", minor: "2"}
-    iex> to_string(version)
-    "1.2"
+      iex> version = %UAParser.Version{major: "1", minor: "2"}
+      iex> to_string(version)
+      "1.2"
 
-    iex> version = %UAParser.Version{major: "1"}
-    iex> to_string(version)
-    "1"
+      iex> version = %UAParser.Version{major: "1"}
+      iex> to_string(version)
+      "1"
   """
   defstruct [:major, :minor, :patch, :patch_minor]
 end
