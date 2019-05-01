@@ -15,7 +15,7 @@ Add `ua_parser` to your `mix.exs` dependencies:
 
 ```elixir
 def deps do
-  [{:ua_parser, "~> 1.4"}]
+  [{:ua_parser, "~> 1.6"}]
 end
 ```
 
