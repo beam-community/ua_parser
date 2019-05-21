@@ -3,7 +3,7 @@ defmodule UAParser.Parsers.UA do
   A parser module representing the user agent from a request.
   """
 
-  alias UAParser.{UA, Parsers.Base}
+  alias UAParser.{Parsers.Base, UA}
 
   import Base
 

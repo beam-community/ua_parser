@@ -25,8 +25,8 @@ defmodule UAParser.Mixfile do
       {:yamerl, "~> 0.7"},
 
       # Development & Test dependencies
-      {:credo, "~> 0.10", only: [:dev, :test]},
-      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:credo, "~> 1.0.5", only: [:dev, :test]},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 
