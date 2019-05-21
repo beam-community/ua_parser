@@ -7,6 +7,7 @@ defmodule Example.FooController do
       |> Plug.Conn.get_req_header("user-agent")
       |> List.first()
       |> UAParser.parse()
+
     text(conn, ua)
   end
 end

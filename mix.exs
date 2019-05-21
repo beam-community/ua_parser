@@ -9,8 +9,8 @@ defmodule UAParser.Mixfile do
       description: "Parse user-agent strings with BrowserScope patterns",
       version: @version,
       elixir: "~> 1.4",
-      build_embedded: Mix.env == :prod,
-      start_permanent: Mix.env == :prod,
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
       package: package(),
       deps: deps()
     ]

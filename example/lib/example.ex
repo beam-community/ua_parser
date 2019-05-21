@@ -11,7 +11,7 @@ defmodule Example do
       # Start the Ecto repository
       supervisor(Example.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(Example.Endpoint, []),
+      supervisor(Example.Endpoint, [])
       # Start your own worker by calling: Example.Worker.start_link(arg1, arg2, arg3)
       # worker(Example.Worker, [arg1, arg2, arg3]),
     ]

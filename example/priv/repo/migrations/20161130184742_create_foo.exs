@@ -3,10 +3,9 @@ defmodule Example.Repo.Migrations.CreateFoo do
 
   def change do
     create table(:foos) do
-      add :bar, :string
+      add(:bar, :string)
 
       timestamps()
     end
-
   end
 end
