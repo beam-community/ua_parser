@@ -35,7 +35,7 @@ defmodule UAParser.Mixfile do
       maintainers: ["Sean Callan"],
       files: ["lib", "mix.exs", "README*", "LICENSE*", "priv"],
       licenses: ["Apache 2.0"],
-      links: %{github: "https://github.com/doomspork/ua_parser"}
+      links: %{github: "https://github.com/beam-community/ua_parser"}
     ]
   end
 end

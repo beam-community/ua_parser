@@ -52,7 +52,7 @@ defmodule Example.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:ua_parser, git: "https://github.com/doomspork/ua_parser.git", branch: "master"}
+      {:ua_parser, git: "https://github.com/beam-community/ua_parser.git", branch: "master"}
     ]
   end
 

@@ -4,8 +4,8 @@
 
 A simple, fast user-agent parsing library based on BrowserScope's UA database with a good default dictionary.
 
-[travis-img]: https://travis-ci.org/doomspork/ua_parser.png?branch=master
-[travis]: https://travis-ci.org/doomspork/ua_parser
+[travis-img]: https://travis-ci.org/beam-community/ua_parser.png?branch=master
+[travis]: https://travis-ci.org/beam-community/ua_parser
 [license-img]: https://img.shields.io/badge/license-Apache%202.0-blue.svg
 [license]: http://opensource.org/licenses/Apache-2.0
 
@@ -82,7 +82,7 @@ And now set up `mix.exs`:
     [
      {:cowboy, "~> 1.0.0"},
      {:plug, "~> 1.0"},
-     {:ua_parser, git: "https://github.com/doomspork/ua_parser.git",
+     {:ua_parser, git: "https://github.com/beam-community/ua_parser.git",
                   branch: "master"},
     ]
   end
