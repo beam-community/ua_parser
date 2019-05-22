@@ -13,8 +13,8 @@ defmodule UAParser.ProcessorTest do
   end
 
   def test_data do
-    File.cwd!
+    File.cwd!()
     |> Path.join("test/fixtures/patterns.yml")
-    |> :yamerl_constr.file
+    |> :yamerl_constr.file()
   end
 end

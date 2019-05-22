@@ -4,8 +4,10 @@ defmodule UAParser.Parsers.VersionTest do
   alias UAParser.Parsers.Version, as: Parser
   alias UAParser.Version
 
-  @pattern [regex: ~r/((?:Mac ?|; )OS X)[\s\/](?:(\d+)[_.](\d+)(?:[_.](\d+))?|Mach-O)/,
-            os_replacement: "Mac OS X"]
+  @pattern [
+    regex: ~r/((?:Mac ?|; )OS X)[\s\/](?:(\d+)[_.](\d+)(?:[_.](\d+))?|Mach-O)/,
+    os_replacement: "Mac OS X"
+  ]
   @match ["Mac OS X", "10", "5", "7"]
   @replacement_keys [:not_used, :not_used, :not_used, :not_used]
 

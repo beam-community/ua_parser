@@ -9,8 +9,8 @@ defmodule UAParser.Mixfile do
       description: "Parse user-agent strings with BrowserScope patterns",
       version: @version,
       elixir: "~> 1.4",
-      build_embedded: Mix.env == :prod,
-      start_permanent: Mix.env == :prod,
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
       package: package(),
       deps: deps()
     ]
@@ -25,8 +25,8 @@ defmodule UAParser.Mixfile do
       {:yamerl, "~> 0.7"},
 
       # Development & Test dependencies
-      {:credo, "~> 0.10", only: [:dev, :test]},
-      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:credo, "~> 1.0.5", only: [:dev, :test]},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 
@@ -35,7 +35,7 @@ defmodule UAParser.Mixfile do
       maintainers: ["Sean Callan"],
       files: ["lib", "mix.exs", "README*", "LICENSE*", "priv"],
       licenses: ["Apache 2.0"],
-      links: %{github: "https://github.com/doomspork/ua_parser"}
+      links: %{github: "https://github.com/beam-community/ua_parser"}
     ]
   end
 end

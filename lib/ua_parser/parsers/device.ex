@@ -28,8 +28,8 @@ defmodule UAParser.Parsers.Device do
       match
       |> Enum.with_index()
       |> Enum.reduce(replace, fn {_, index}, acc ->
-           replace(acc, index, match)
-         end)
+        replace(acc, index, match)
+      end)
 
     do_replacement(replacements, {group, match}, Map.put(device, key, replace))
   end

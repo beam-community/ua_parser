@@ -54,10 +54,10 @@ defmodule UAParser.Parser do
   defp search(groups, string) do
     groups
     |> Enum.find(fn group ->
-         group
-         |> Keyword.fetch!(:regex)
-         |> Regex.match?(string)
-       end)
+      group
+      |> Keyword.fetch!(:regex)
+      |> Regex.match?(string)
+    end)
     |> match(string)
   end
 end

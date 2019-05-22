@@ -45,3 +45,6 @@ Temporary Items
 erl_crash.dump
 *.ez
 *.beam
+
+# The directory NPM downloads your dependencies sources to.
+/example/assets/node_modules/
