@@ -32,7 +32,7 @@ defmodule UAParser.Mixfile do
 
   defp package do
     [
-      maintainers: ["Sean Callan"],
+      maintainers: ["Sean Callan", "Nathan Youngman"],
       files: ["lib", "mix.exs", "README*", "LICENSE*", "priv"],
       licenses: ["Apache 2.0"],
       links: %{github: "https://github.com/beam-community/ua_parser"}
