@@ -3,6 +3,8 @@ defmodule UAParser.OperatingSystem do
   A module representing an operating System struct.
   """
 
+  @type t :: %__MODULE__{}
+
   @doc """
   ## Examples
 

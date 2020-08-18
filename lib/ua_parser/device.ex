@@ -3,6 +3,8 @@ defmodule UAParser.Device do
   Device struct and helper methods.
   """
 
+  @type t :: %__MODULE__{}
+
   @doc """
   ## Examples
 

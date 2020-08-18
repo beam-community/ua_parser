@@ -3,6 +3,8 @@ defmodule UAParser.UA do
   User Agent struct and helper methods.
   """
 
+  @type t :: %__MODULE__{}
+
   @doc """
   Display the UA as a string
 

@@ -3,6 +3,8 @@ defmodule UAParser.Version do
   A module representing user agent version struct and helper methods.
   """
 
+  @type t :: %__MODULE__{}
+
   @doc """
   ## Examples
 
