@@ -3,7 +3,11 @@ defmodule UAParser.Device do
   Device struct and helper methods.
   """
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          brand: String.t(),
+          family: String.t(),
+          model: String.t()
+        }
 
   @doc """
   ## Examples

@@ -3,7 +3,12 @@ defmodule UAParser.UA do
   User Agent struct and helper methods.
   """
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          device: String.t(),
+          family: String.t(),
+          os: String.t(),
+          version: String.t()
+        }
 
   @doc """
   Display the UA as a string
