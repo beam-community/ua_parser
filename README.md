@@ -1,6 +1,6 @@
 # UAParser
 
-[![Build Status][travis-img]][travis] [![License][license-img]][license]
+[![License][license-img]][license]
 
 A simple, fast user-agent parsing library based on BrowserScope's UA database with a good default dictionary.
 
