@@ -8,7 +8,7 @@ defmodule UAParserTest do
     ua = UAParser.parse(@user_agent)
     assert to_string(ua) == "Skyfire 2.0"
     assert to_string(ua.os) == "Mac OS X 10.5.7"
-    assert to_string(ua.device) == "Other"
+    assert to_string(ua.device) == "Mac"
   end
 
   test "parse user_agent using custom patterns" do

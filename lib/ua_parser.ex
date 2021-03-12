@@ -17,7 +17,7 @@ defmodule UAParser do
       iex> to_string(ua.os)
       "Mac OS X 10.5.7"
       iex> to_string(ua.device)
-      "Other"
+      "Mac"
   """
   def parse(nil), do: parse("")
   def parse(ua), do: parse(ua, default_pattern())
