@@ -11,7 +11,7 @@ defmodule UAParser.UA do
         }
 
   @doc """
-  Display the UA as a string
+  Display the UA as a string.
 
   ## Examples
 
@@ -27,6 +27,7 @@ defmodule UAParser.UA do
       iex> agent = %UAParser.UA{}
       iex> to_string(agent)
       "Other"
+
   """
 
   defstruct [:device, :family, :os, :version]

@@ -6,7 +6,7 @@ defmodule UAParser.Parser do
   alias UAParser.Parsers.{Device, OperatingSystem, UA}
 
   @doc """
-  Parse a user-agent string given a set of patterns
+  Parse a user-agent string given a set of patterns.
   """
   def parse({ua_patterns, os_patterns, device_patterns}, user_agent) do
     user_agent

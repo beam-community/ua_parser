@@ -5,7 +5,7 @@ defmodule UAParser.Processor do
   """
 
   @doc """
-  Process a document into Elixir keyword lists and compiled patterns
+  Process a document into Elixir keyword lists and compiled patterns.
   """
   def process(document) do
     document

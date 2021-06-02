@@ -23,6 +23,7 @@ defmodule UAParser.Version do
       iex> version = %UAParser.Version{major: "1"}
       iex> to_string(version)
       "1"
+
   """
   defstruct [:major, :minor, :patch, :patch_minor]
 end

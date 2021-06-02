@@ -39,12 +39,15 @@ Temporary Items
 
 
 ### Elixir ###
-/_build
-/cover
-/deps
+/_build/
+/cover/
+/deps/
+/doc/
+/.fetch
 erl_crash.dump
 *.ez
-*.beam
+ua_parser-*.tar
+/tmp/
 
 # The directory NPM downloads your dependencies sources to.
 /example/assets/node_modules/

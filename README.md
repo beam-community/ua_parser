@@ -1,21 +1,23 @@
 # UAParser
 
-[![License][license-img]][license]
+[![Build Status](https://travis-ci.org/beam-community/ua_parser.svg?branch=master)](https://travis-ci.org/beam-community/ua_parser)
+[![Module Version](https://img.shields.io/hexpm/v/ua_parser.svg)](https://hex.pm/packages/ua_parser)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/ua_parser/)
+[![Total Download](https://img.shields.io/hexpm/dt/ua_parser.svg)](https://hex.pm/packages/ua_parser)
+[![License](https://img.shields.io/hexpm/l/ua_parser.svg)](https://github.com/beam-community/ua_parser/blob/master/LICENSE)
+[![Last Updated](https://img.shields.io/github/last-commit/beam-community/ua_parser.svg)](https://github.com/beam-community/ua_parser/commits/master)
 
-A simple, fast user-agent parsing library based on BrowserScope's UA database with a good default dictionary.
-
-[travis-img]: https://travis-ci.org/beam-community/ua_parser.png?branch=master
-[travis]: https://travis-ci.org/beam-community/ua_parser
-[license-img]: https://img.shields.io/badge/license-Apache%202.0-blue.svg
-[license]: http://opensource.org/licenses/Apache-2.0
+A simple, fast user-agent parsing library based on [BrowserScope's](https://ua-profiler.appspot.com/) UA database with a good default dictionary.
 
 ## Installation
 
-Add `ua_parser` to your `mix.exs` dependencies:
+Add `:ua_parser` to your `mix.exs` dependencies:
 
 ```elixir
 def deps do
-  [{:ua_parser, "~> 1.8"}]
+  [
+    {:ua_parser, "~> 1.8"}
+  ]
 end
 ```
 
@@ -41,6 +43,7 @@ iex> to_string(ua.device)
 ```
 
 Retrieving and parsing a user-agent string from Plug:
+
 ```elixir
 ua =
   conn
@@ -78,14 +81,14 @@ And now set up `mix.exs`:
 
 ```elixir
 # ...
-  defp deps do
-    [
-     {:cowboy, "~> 1.0.0"},
-     {:plug, "~> 1.0"},
-     {:ua_parser, git: "https://github.com/beam-community/ua_parser.git",
-                  branch: "master"},
-    ]
-  end
+defp deps do
+  [
+   {:cowboy, "~> 1.0.0"},
+   {:plug, "~> 1.0"},
+   {:ua_parser, git: "https://github.com/beam-community/ua_parser.git",
+                branch: "master"},
+  ]
+end
 # ...
 ```
 
@@ -116,8 +119,16 @@ end
 
 From here we can pipe requests through it in other applications or use it on its own as we please.
 
-## License
+## Copyright and License
 
-UAParser source code is released under Apache 2.0 License.
+Copyright (c) 2016 Sean Callan
 
-See [LICENSE](LICENSE) for more information.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
