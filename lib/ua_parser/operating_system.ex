@@ -19,6 +19,7 @@ defmodule UAParser.OperatingSystem do
       iex> os = %UAParser.OperatingSystem{family: "macOS"}
       iex> to_string(os)
       "macOS"
+
   """
   defstruct [:family, :version]
 end

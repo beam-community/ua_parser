@@ -19,6 +19,7 @@ defmodule UAParser.Device do
       iex> device = %UAParser.Device{}
       iex> to_string(device)
       "Other"
+
   """
   defstruct [:brand, :family, :model]
 end

@@ -1,6 +1,7 @@
 defmodule UAParser.Storage do
   @moduledoc """
-  Load pattern data at compile time. Recompiling the application is necessary after updating the pattern file.
+  Load pattern data at compile time. Recompiling the application is necessary
+  after updating the pattern file.
   """
 
   alias UAParser.Processor
