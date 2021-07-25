@@ -1,6 +1,6 @@
 # UAParser
 
-[![Build Status](https://travis-ci.org/beam-community/ua_parser.svg?branch=master)](https://travis-ci.org/beam-community/ua_parser)
+[![Continuous Integration](https://github.com/beam-community/ua_parser/actions/workflows/ci.yml/badge.svg)](https://github.com/beam-community/ua_parser/actions/workflows/ci.yml)
 [![Module Version](https://img.shields.io/hexpm/v/ua_parser.svg)](https://hex.pm/packages/ua_parser)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/ua_parser/)
 [![Total Download](https://img.shields.io/hexpm/dt/ua_parser.svg)](https://hex.pm/packages/ua_parser)
