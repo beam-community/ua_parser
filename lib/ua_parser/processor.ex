@@ -46,8 +46,7 @@ defmodule UAParser.Processor do
   end
 
   defp extract([document | _]) do
-    [{'user_agent_parsers', user_agents}, {'os_parsers', os}, {'device_parsers', devices}] =
-      document
+    [{'user_agent_parsers', user_agents}, {'os_parsers', os}, {'device_parsers', devices}] = document
 
     [user_agents, os, devices]
   end

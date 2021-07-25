@@ -2,12 +2,11 @@ defmodule UAParser.Mixfile do
   use Mix.Project
 
   @source_url "https://github.com/beam-community/ua_parser"
-  @version "1.8.0"
 
   def project do
     [
       app: :ua_parser,
-      version: @version,
+      version: version(),
       elixir: "~> 1.4",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
@@ -23,9 +22,9 @@ defmodule UAParser.Mixfile do
 
   defp deps do
     [
-      {:yamerl, "~> 0.7"},
-      {:credo, "~> 1.0.5", only: [:dev, :test]},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+      {:yamerl, "~> 0.8"},
+      {:credo, "~> 1.5", only: [:dev, :test]},
+      {:ex_doc, "~> 0.24", only: :dev, runtime: false}
     ]
   end
 
@@ -47,8 +46,14 @@ defmodule UAParser.Mixfile do
       ],
       main: "readme",
       source_url: @source_url,
-      source_ref: "v#{@version}",
+      source_ref: "v#{version()}",
       formatters: ["html"]
     ]
+  end
+
+  defp version do
+    "VERSION"
+    |> File.read!()
+    |> String.trim()
   end
 end
