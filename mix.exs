@@ -32,7 +32,7 @@ defmodule UAParser.Mixfile do
     [
       description: "Parse user-agent strings with BrowserScope patterns",
       maintainers: ["Sean Callan", "Nathan Youngman"],
-      files: ["lib", "mix.exs", "README*", "LICENSE*", "priv"],
+      files: ["lib", "mix.exs", "README*", "LICENSE*", "priv", "VERSION"],
       licenses: ["Apache-2.0"],
       links: %{GitHub: @source_url}
     ]
