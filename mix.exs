@@ -23,7 +23,9 @@ defmodule UAParser.Mixfile do
   defp deps do
     [
       {:yamerl, "~> 0.10"},
-      {:credo, "~> 1.7", only: [:dev, :test]},
+      # Dev & Test dependencies
+      {:dialyxir, "~> 1.1", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.31", only: :dev, runtime: false}
     ]
   end
