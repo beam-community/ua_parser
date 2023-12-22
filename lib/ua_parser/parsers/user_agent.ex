@@ -2,9 +2,7 @@ defmodule UAParser.Parsers.UA do
   @moduledoc """
   A parser module representing the user agent from a request.
   """
-  @behaviour UAParser.Parsers.Base
-
-  import UAParser.Parsers.Base
+  use UAParser.Parsers.Base
 
   alias UAParser.UA
 

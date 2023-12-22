@@ -3,10 +3,7 @@ defmodule UAParser.Parsers.Device do
   A parser module representing the device & its relevent information
   of a user agent.
   """
-
-  @behaviour UAParser.Parsers.Base
-
-  import UAParser.Parsers.Base
+  use UAParser.Parsers.Base
 
   alias UAParser.Device
 

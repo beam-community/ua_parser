@@ -5,6 +5,14 @@ defmodule UAParser.Parsers.Base do
 
   @callback parse(args :: term) :: result :: term | nil
 
+  defmacro __using__(_opts) do
+    quote do
+      @behaviour UAParser.Parsers.Base
+
+      import UAParser.Parsers.Base
+    end
+  end
+
   defmacro replacement_parser(opts) do
     [family_key | replacements] = Keyword.fetch!(opts, :keys)
     mod = opts[:struct]
