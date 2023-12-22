@@ -17,6 +17,7 @@ defmodule UAParser.Processor do
   defp atom_key(key) do
     key
     |> String.Chars.to_string()
+    # credo:disable-for-next-line Credo.Check.Warning.UnsafeToAtom
     |> String.to_atom()
   end
 
