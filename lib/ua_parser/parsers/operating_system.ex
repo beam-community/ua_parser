@@ -3,7 +3,7 @@ defmodule UAParser.Parsers.OperatingSystem do
   A parser module representing the operating system derived
   from a user agent.
   """
-  import UAParser.Parsers.Base
+  use UAParser.Parsers.Base
 
   alias UAParser.OperatingSystem
 

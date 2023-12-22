@@ -35,7 +35,11 @@ end
 
 defimpl String.Chars, for: UAParser.UA do
   def to_string(%{family: family, version: nil}), do: family_name(family)
-  def to_string(%{family: family, version: version}), do: "#{family_name(family)} #{version}"
+
+  def to_string(%{family: family, version: version}) do
+    family_name = family_name(family)
+    "#{family_name} #{version}"
+  end
 
   defp family_name(nil), do: "Other"
   defp family_name(name), do: name

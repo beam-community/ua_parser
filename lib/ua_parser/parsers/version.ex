@@ -4,9 +4,7 @@ defmodule UAParser.Parsers.Version do
   browser derived from the user agent.
   """
 
-  @behaviour UAParser.Parsers.Base
-
-  import UAParser.Parsers.Base
+  use UAParser.Parsers.Base
 
   alias UAParser.Version
 
