@@ -6,8 +6,8 @@ defmodule UAParser.Mixfile do
   def project do
     [
       app: :ua_parser,
-      version: version(),
-      elixir: "~> 1.4",
+      version: "1.9.1",
+      elixir: "~> 1.13",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       package: package(),
@@ -22,9 +22,9 @@ defmodule UAParser.Mixfile do
 
   defp deps do
     [
-      {:yamerl, "~> 0.8"},
-      {:credo, "~> 1.5", only: [:dev, :test]},
-      {:ex_doc, "~> 0.24", only: :dev, runtime: false}
+      {:yamerl, "~> 0.10"},
+      {:credo, "~> 1.7", only: [:dev, :test]},
+      {:ex_doc, "~> 0.31", only: :dev, runtime: false}
     ]
   end
 
@@ -32,7 +32,7 @@ defmodule UAParser.Mixfile do
     [
       description: "Parse user-agent strings with BrowserScope patterns",
       maintainers: ["Sean Callan", "Nathan Youngman"],
-      files: ["lib", "mix.exs", "README*", "LICENSE*", "priv", "VERSION"],
+      files: ["lib", "mix.exs", "README*", "LICENSE*", "priv"],
       licenses: ["Apache-2.0"],
       links: %{GitHub: @source_url}
     ]
@@ -46,14 +46,7 @@ defmodule UAParser.Mixfile do
       ],
       main: "readme",
       source_url: @source_url,
-      source_ref: "v#{version()}",
       formatters: ["html"]
     ]
-  end
-
-  defp version do
-    "VERSION"
-    |> File.read!()
-    |> String.trim()
   end
 end

@@ -2,10 +2,11 @@ defmodule UAParser.Parsers.UA do
   @moduledoc """
   A parser module representing the user agent from a request.
   """
+  @behaviour UAParser.Parsers.Base
 
-  alias UAParser.{Parsers.Base, UA}
+  import UAParser.Parsers.Base
 
-  import Base
+  alias UAParser.UA
 
   replacement_parser(
     struct: UA,

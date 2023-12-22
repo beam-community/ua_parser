@@ -17,7 +17,7 @@ defmodule UAParser.Processor do
   defp atom_key(key) do
     key
     |> String.Chars.to_string()
-    |> String.to_atom()
+    |> String.to_existing_atom()
   end
 
   defp compile(groups) do

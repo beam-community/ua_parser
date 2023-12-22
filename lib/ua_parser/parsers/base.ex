@@ -1,6 +1,6 @@
 defmodule UAParser.Parsers.Base do
   @moduledoc """
-  A module repsenting the base and behaviour for all of our parsers.
+  A module representing the base and behaviour for all of our parsers.
   """
 
   @callback parse(args :: term) :: result :: term | nil
