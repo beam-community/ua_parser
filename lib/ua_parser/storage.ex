@@ -11,7 +11,7 @@ defmodule UAParser.Storage do
   data =
     :ua_parser
     |> :code.priv_dir()
-    |> Kernel.++('/patterns.yml')
+    |> Kernel.++(~c"/patterns.yml")
     |> to_string
     |> :yamerl_constr.file([])
     |> Processor.process()
