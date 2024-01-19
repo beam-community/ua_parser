@@ -1,6 +1,6 @@
 # UAParser
 
-[![Continuous Integration](https://github.com/beam-community/ua_parser/actions/workflows/ci.yml/badge.svg)](https://github.com/beam-community/ua_parser/actions/workflows/ci.yml)
+[![Continuous Integration](https://github.com/beam-community/ua_parser/actions/workflows/ci.yaml/badge.svg)](https://github.com/beam-community/ua_parser/actions/workflows/ci.yaml)
 [![Module Version](https://img.shields.io/hexpm/v/ua_parser.svg)](https://hex.pm/packages/ua_parser)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/ua_parser/)
 [![Total Download](https://img.shields.io/hexpm/dt/ua_parser.svg)](https://hex.pm/packages/ua_parser)
@@ -95,7 +95,7 @@ end
 And we get our deps and compile:
 
 ```shell
-$ mix do deps.get, compile
+mix do deps.get, compile
 ```
 
 And now we can make our plug:
