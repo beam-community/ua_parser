@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/beam-community/ua_parser/compare/v1.9.0...v1.9.1) (2024-12-21)
+
+
+### Bug Fixes
+
+* resolve warning in Elixir 1.18 ([#93](https://github.com/beam-community/ua_parser/issues/93)) ([d674d47](https://github.com/beam-community/ua_parser/commit/d674d47dccd7f4b0c306c7a379cd8aece2ddf345))
+
 ## [1.9.0](https://github.com/beam-community/ua_parser/compare/v1.8.0...v1.9.0) (2024-06-25)
 
 
