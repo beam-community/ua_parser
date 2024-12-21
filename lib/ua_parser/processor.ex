@@ -25,7 +25,7 @@ defmodule UAParser.Processor do
     # result: {user_agents, os, devices}
     groups
     |> Enum.map(&compile_groups/1)
-    |> to_tuple
+    |> :erlang.list_to_tuple()
   end
 
   defp compile_group(group) do
@@ -57,13 +57,5 @@ defmodule UAParser.Processor do
   defp to_keyword([{key, value} | tails]) do
     keyword = {atom_key(key), String.Chars.to_string(value)}
     [keyword | to_keyword(tails)]
-  end
-
-  defp to_tuple(values, tuple \\ {})
-  defp to_tuple([], tuple), do: tuple
-
-  defp to_tuple([head | tail], tuple) do
-    tuple = Tuple.append(tuple, head)
-    to_tuple(tail, tuple)
   end
 end
