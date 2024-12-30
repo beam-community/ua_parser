@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.2](https://github.com/beam-community/ua_parser/compare/v1.9.1...v1.9.2) (2024-12-30)
+
+
+### Miscellaneous Chores
+
+* release 1.9.2 ([8cc2d02](https://github.com/beam-community/ua_parser/commit/8cc2d022940480cf3985feda81a2d6b9fff67974))
+
 ## [1.9.1](https://github.com/beam-community/ua_parser/compare/v1.9.0...v1.9.1) (2024-12-21)
 
 
