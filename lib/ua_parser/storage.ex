@@ -8,15 +8,11 @@ defmodule UAParser.Storage do
 
   Application.start(:yamerl)
 
-  data =
+  def list do
     :ua_parser
     |> :code.priv_dir()
     |> Kernel.++(~c"/patterns.yml")
-    |> to_string
     |> :yamerl_constr.file([])
     |> Processor.process()
-
-  @data data
-
-  def list, do: @data
+  end
 end
