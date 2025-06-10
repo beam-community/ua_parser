@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.3](https://github.com/beam-community/ua_parser/compare/v1.9.2...v1.9.3) (2025-06-10)
+
+
+### Bug Fixes
+
+* [[#108](https://github.com/beam-community/ua_parser/issues/108)] Remove module attribute for Erlang 28 ([#112](https://github.com/beam-community/ua_parser/issues/112)) ([fbe70f6](https://github.com/beam-community/ua_parser/commit/fbe70f6b9b913bc6db7a2682eb59fe4a5eb190ce))
+
 ## [1.9.2](https://github.com/beam-community/ua_parser/compare/v1.9.1...v1.9.2) (2024-12-30)
 
 
