@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.4](https://github.com/beam-community/ua_parser/compare/v1.9.3...v1.9.4) (2025-11-10)
+
+
+### Bug Fixes
+
+* Manifest version and config ([e038b1c](https://github.com/beam-community/ua_parser/commit/e038b1c86f8a6d6dcdbe2966841278693d0a6cdf))
+
 ## [1.9.3](https://github.com/beam-community/ua_parser/compare/v1.9.2...v1.9.3) (2025-06-10)
 
 
