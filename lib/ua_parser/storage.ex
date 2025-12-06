@@ -14,17 +14,17 @@ defmodule UAParser.Storage do
   Returns `:ok` on success.
   """
   @spec load_table() :: :ok
-  def load_table() do
+  def load_table do
     {ua_patterns, os_patterns, device_patterns} = read_from_yaml()
 
-    :persistent_term.put(key(:ua_patterns), ua_patterns)
-    :persistent_term.put(key(:os_patterns), os_patterns)
-    :persistent_term.put(key(:device_patterns), device_patterns)
+    simple_put(:ua_patterns, ua_patterns)
+    simple_put(:os_patterns, os_patterns)
+    simple_put(:device_patterns, device_patterns)
 
     :ok
   end
 
-  defp read_from_yaml() do
+  defp read_from_yaml do
     :ua_parser
     |> :code.priv_dir()
     |> Kernel.++(~c"/patterns.yml")
@@ -36,33 +36,39 @@ defmodule UAParser.Storage do
   Retrieves the list of user agent patterns from persistent_term.
   """
   @spec ua_patterns() :: term()
-  def ua_patterns(), do: simple_lookup(:ua_patterns)
+  def ua_patterns, do: simple_get(:ua_patterns)
 
   @doc """
   Retrieves the list of operating system patterns from persistent_term.
   """
   @spec os_patterns() :: term()
-  def os_patterns(), do: simple_lookup(:os_patterns)
+  def os_patterns, do: simple_get(:os_patterns)
 
   @doc """
   Retrieves the list of device patterns from persistent_term.
   """
   @spec device_patterns() :: term()
-  def device_patterns(), do: simple_lookup(:device_patterns)
+  def device_patterns, do: simple_get(:device_patterns)
 
   @doc """
   Returns a tuple containing all three pattern lists:
   `{user_agent_patterns, os_patterns, device_patterns}`.
   """
   @spec list() :: {term(), term(), term()}
-  def list() do
+  def list do
     {ua_patterns(), os_patterns(), device_patterns()}
   end
 
-  defp simple_lookup(key) do
+  defp simple_get(key) do
     key
     |> key()
     |> :persistent_term.get()
+  end
+
+  defp simple_put(key, value) do
+    key
+    |> key()
+    |> :persistent_term.put(value)
   end
 
   defp key(name) do
