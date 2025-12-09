@@ -1,8 +1,8 @@
 defmodule UAParser.Parsers.DeviceTest do
   use ExUnit.Case
 
-  alias UAParser.Parsers.Device, as: Parser
   alias UAParser.{Device, Storage}
+  alias UAParser.Parsers.Device, as: Parser
 
   test "parses device information" do
     {_, _, [pattern | _]} = Storage.list()
