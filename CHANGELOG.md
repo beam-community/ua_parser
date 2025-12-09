@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.10.0](https://github.com/beam-community/ua_parser/compare/v1.9.3...v1.10.0) (2025-12-09)
+
+
+### Features
+
+* Use persistent_term to store patterns in memory ([#130](https://github.com/beam-community/ua_parser/issues/130)) ([c254b18](https://github.com/beam-community/ua_parser/commit/c254b18ea7e0a2af3f706f0be81f309d0c10ccb2))
+
+
+### Bug Fixes
+
+* Manifest version and config ([e038b1c](https://github.com/beam-community/ua_parser/commit/e038b1c86f8a6d6dcdbe2966841278693d0a6cdf))
+
 ## [1.9.3](https://github.com/beam-community/ua_parser/compare/v1.9.2...v1.9.3) (2025-06-10)
 
 
