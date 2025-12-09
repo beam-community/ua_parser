@@ -1,8 +1,8 @@
 defmodule UAParser.Parsers.OperatingSystemTest do
   use ExUnit.Case
 
-  alias UAParser.Parsers.OperatingSystem, as: Parser
   alias UAParser.{OperatingSystem, Version}
+  alias UAParser.Parsers.OperatingSystem, as: Parser
 
   @match ["Mac OS X 10_5_7", "Mac OS X", "10", "5", "7"]
 

@@ -17,7 +17,10 @@ defmodule UAParser.Mixfile do
   end
 
   def application do
-    [extra_aplications: [:logger, :yamerl]]
+    [
+      mod: {UAParser.Application, []},
+      extra_aplications: [:logger, :yamerl]
+    ]
   end
 
   defp deps do
