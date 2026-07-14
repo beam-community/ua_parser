@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.1](https://github.com/beam-community/ua_parser/compare/v1.10.0...v1.10.1) (2026-07-14)
+
+
+### Bug Fixes
+
+* **ci:** Update common-config workflow to use beam-community/actions-sync ([#147](https://github.com/beam-community/ua_parser/issues/147)) ([3370a8d](https://github.com/beam-community/ua_parser/commit/3370a8d59320d62a46bcfe9dca589754c73794af))
+* Unblock common-config sync, pinned actions-sync release had no build output ([#159](https://github.com/beam-community/ua_parser/issues/159)) ([1764c79](https://github.com/beam-community/ua_parser/commit/1764c79b0086558b9a1350aec6e6706fe21a0119))
+
 ## [1.10.0](https://github.com/beam-community/ua_parser/compare/v1.9.3...v1.10.0) (2025-12-09)
 
 
